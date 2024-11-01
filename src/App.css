@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.button-blue {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.stat {
+  text-align: left;
+}
