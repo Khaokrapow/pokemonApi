@@ -1,16 +1,66 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.blue-button {
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.blue-button:hover {
+  background-color: #0056b3;
+}
+
+.pokemon-container {
+  display: block; 
+  margin: 0 auto; 
+}
+
+.pokemon-card {
+  background-color: rgb(162, 235, 162);
+  margin: 20px auto; 
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%; 
+  max-width: 400px; 
   text-align: center;
 }
 
-.button-blue {
-  background-color: blue;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
+.pokemon-card img {
+  background-color: white;
+  width: 80px;
+  height: 80px;
 }
 
 .stat {
   text-align: left;
+}
+
+.stat p {
+  margin: 5px 0;
+}
+
+.stat ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stat li {
+  padding: 2px 0;
 }

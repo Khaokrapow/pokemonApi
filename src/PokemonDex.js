@@ -26,37 +26,37 @@ const PokemonDex = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div>
       <h1>API</h1>
       <h1>Pokemon</h1>
-      <button onClick={fetchPokemonList} className="button-blue">Get pokemon dex</button>
-    
+      <button onClick={fetchPokemonList} className="blue-button">Get pokemon dex</button>
+  
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        pokemonList.map((pokemon) => (
-          <div key={pokemon.id} style={{ backgroundColor: 'lightgreen', margin: '20px', padding: '10px' }}>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} style={{ backgroundColor: 'white', margin: '10', padding: '0px' }}/>
-            <img src={pokemon.sprites.back_default} alt={pokemon.name} style={{ backgroundColor: 'white', margin: '10', padding: '0px' }}/>
-
-
-            <div className="stat">
-                <h2><strong>Name : </strong>{pokemon.name.toUpperCase()}</h2>
+        <div className="pokemon-container">
+          {pokemonList.map((pokemon) => (
+            <div key={pokemon.id} className="pokemon-card">
+              <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+              <img src={pokemon.sprites.back_default} alt={pokemon.name} />
+              <div className="stat">
+                <p><strong>Name : </strong>{pokemon.name.toUpperCase()}</p>
                 <p><strong>Type 1:</strong> {pokemon.types[0].type.name}</p>
                 {pokemon.types[1] && <p><strong>Type 2:</strong> {pokemon.types[1].type.name}</p>}
                 <p><strong>Base stats:</strong></p>
                 <ul>
-                {pokemon.stats.map((stat) => (
+                  {pokemon.stats.map((stat) => (
                     <li key={stat.stat.name}>{`${stat.stat.name} = ${stat.base_stat}`}</li>
-                ))}
+                  ))}
                 </ul>
-
+              </div>
             </div>
-          </div>
-        ))
+          ))}
+        </div>
       )}
     </div>
   );
+  
 };
 
 export default PokemonDex;
